@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<property name="hibernate.connection.url">jdbc:oracle:thin:@venus:1521:master</property>
+
+		<!-- renseigner l'utilisateur et son mot de passe -->
+		<property name="hibernate.connection.username">user50</property>
+		<property name="hibernate.connection.password">user50</property>
+
+		<property name="hibernate.connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
+		<property name="hibernate.dialect">org.hibernate.dialect.OracleDialect</property>
+		<property name="hibernate.cache.use_second_level_cache">false</property>
+		<property name="hibernate.cache.use_query_cache">false</property>
+		<property name="hibernate.format_sql">true</property>
+		<property name="hibernate.show_sql">false</property>
+		<property name="hibernate.connection.pool_size">2</property>
+
+		<!-- Validation automatique des transactions -->
+		<property name="hibernate.connection.autocommit">true</property>
+
+
+		<!-- Permet de générer la base de données au lancement de l'application -->
+		<!--   <property name="hibernate.hbm2ddl.auto">create</property> -->
+
+		<!--  mappings -->
+		<mapping resource="Editeur.hbm.xml"/> 
+		<mapping resource="Livre.hbm.xml"/>
+		
+		
+	</session-factory>
+</hibernate-configuration>

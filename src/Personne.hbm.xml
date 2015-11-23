@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class
+        name="Person"
+        table="personne">
+        <id
+            column="identifiant" name="id"
+            type="integer">
+            <generator class="native"/>
+        </id>
+        <property type="string" length="20" name="nom" not-null="false" />
+          <property type="string" length="20" name="prenom" not-null="false" />
+          <property type="string" length="20" name="ville" not-null="false" /> 
+           <property type="integer" name="age" not-null="false" />
+          
+    </class>
+    </hibernate-mapping>

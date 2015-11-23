@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class
+        name="Editeur"
+        table="Editeur">
+        <id
+            name="nomEditeur"
+            column="nomEditeur">
+        </id>
+        <property name="ville" >
+                <column name="ville" sql-type="VARCHAR(20)"/>
+        </property>
+          <set name="lesLivres" inverse="true" cascade = "all">
+                <key column="nomEditeur"/>
+                <one-to-many class="Livre"/>
+          </set>
+    </class>
+    </hibernate-mapping>
